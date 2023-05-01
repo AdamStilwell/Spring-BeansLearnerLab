@@ -1,7 +1,19 @@
 package com.example.demo;
 
-import org.apereo.services.persondir.support.xml.om.Person;
 
-public class Student extends Person {
-    
+public class Student extends Person implements Learner{
+    public Student(Long id, String name) {
+        super(id, name);
+    }
+
+    public double totalStudyTime;
+
+    @Override
+    public void learn(double numberOfHours) {
+        totalStudyTime += numberOfHours;
+    }
+
+    public double getTotalStudyTime() {
+        return totalStudyTime;
+    }
 }
