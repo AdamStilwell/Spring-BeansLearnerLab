@@ -1,8 +1,10 @@
 package com.example.demo;
 
-import org.apereo.services.persondir.support.xml.om.Person;
 
 public class Instructor extends Person implements Teacher {
+    public Instructor(Long id, String name) {
+        super(id, name);
+    }
 
     @Override
     public void teach(Learner learner, double numberOfHours) {
@@ -20,6 +22,5 @@ public class Instructor extends Person implements Teacher {
             learner.learn(numberOfHoursPerLearner);
         }
     }
-
     
 }

@@ -3,7 +3,6 @@ package com.example.demo;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apereo.services.persondir.support.xml.om.Person;
 
 public abstract class People<PersonType extends Person> implements Iterable<PersonType>{
     List<PersonType> personList;
@@ -38,7 +37,7 @@ public abstract class People<PersonType extends Person> implements Iterable<Pers
         }
     }
 
-    public PersonType<> findById(long id){
+    public PersonType findById(Long id){
         for(PersonType person: personList){
             if(person.getId().equals(id)){
                 return person;
